@@ -38,3 +38,4 @@ FastAdder uses slightly more resources than the Xilinx Adder, however, this is e
 
 # Future Development
 - Add sutract feature
+- Add variants with support for more than two adder inputs
