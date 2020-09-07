@@ -14,6 +14,36 @@ The file `adder.sv` contains all the modules required to use the FastAdder core.
 | out_o | out | `width` | Output of add function |
 | cout_o | out | 1 | Carry output |
 
+## Instantiating Core
+### Verilog
+```verilog
+adder # (
+    .width (16)
+)
+adder_inst (
+    .clk_i (clk),
+    .cin_i (cin),
+    .a_i (a), 
+    .b_i (b),
+    .out_o (out),
+    .cout_o (cout)
+);
+```
+### VHDL
+```vhdl
+adder_inst : adder
+generic map (
+    width => 16
+)
+port map (
+    clk_i => clk,
+    cin_i => cin,
+    a_i => a,
+    b_i => b,
+    out_o => out,
+    cout_o => cout
+)
+```
 # QoR Results
 Performance was the most important aspect of this design, hence the pipelined architecture, and therefore is the QoR metric that is focused on the most.
 
